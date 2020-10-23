@@ -62,7 +62,7 @@ public class MissingReferencesFinder : MonoBehaviour
 			foreach (var component in components)
 			{
 				// Missing components will be null, we can't find their type, etc.
-				if (!component)
+				if (component != null)
 				{
 					Debug.LogErrorFormat(go, $"Missing Component {0} in GameObject: {1}", component.GetType().FullName, GetFullPath(go));
 
